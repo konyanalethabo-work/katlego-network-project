@@ -1,1 +1,44 @@
+cat > docs/01-requirements.md << 'EOF'
+# 1. Client requirements
 
+Katlego Adult Learning Centre is a small institution with no dedicated IT staff on site. It needs a network that keeps its classrooms, computer lab, admin office and server room apart, and that keeps working without an IT department.
+
+## Requirements covered in Milestone 2
+
+| ID | Requirement | Where it is met |
+|----|-------------|-----------------|
+| FR2 | Separate VLANs for each part of the centre | configs/ (Layer 2 and Layer 3 sections) |
+| FR4 | Port Security on every access port (assigned technical challenge) | configs/ switch files, test 5 |
+| FR5 | Server room and infrastructure reachable by authorised staff only | ACL 100 in configs/KATLEGO-RTR.txt, tests 3 and 4 |
+| FR6 / CR11 | VoIP handsets on their own segment | Voice VLAN 40 on SW3 Fa0/6, test 7 |
+
+## Assigned project details
+
+- Project ID: CMPG325-2026-025
+- Client ID: CLI-025
+- Addressing block: 192.168.22.0/24
+- Assigned networking challenge: Port Security
+- Change request CR11: management adopts VoIP handsets
+
+## Milestone dates
+
+| Milestone | Date |
+|-----------|------|
+| Project commencement | 14 August 2026 |
+| Milestone 1: client design review | 28 August 2026 |
+| Milestone 2: client implementation review | 2 October 2026 |
+| Final submission | 16 October 2026 |
+
+## Marking criteria and where they are evidenced
+
+| Criterion | Where |
+|-----------|-------|
+| Client requirements and network design | docs/01 to docs/03 |
+| Packet Tracer implementation and functionality | configs/, docs/05 |
+| Assigned feature: Port Security | configs/, docs/05 (test 5), evidence/ |
+| GitHub portfolio of evidence | this repository |
+| Video demonstration and technical defence | Final submission |
+EOF
+
+git add docs/01-requirements.md
+git commit -m "docs: add client requirements and marking-criteria map"
