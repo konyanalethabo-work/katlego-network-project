@@ -1,0 +1,22 @@
+hostname KATLEGO-SW1-CLASSLIB
+vlan 10
+name DATA_CLASSROOMS_LIBRARY
+vlan 99
+name MANAGEMENT
+exit
+interface vlan 99
+ip address 192.168.22.75 255.255.255.248
+no shutdown
+exit
+ip default-gateway 192.168.22.73
+!
+interface range fastEthernet0/1 - 4
+switchport mode access
+switchport access vlan 10
+exit
+interface fastEthernet0/24
+switchport mode trunk
+switchport trunk allowed vlan 10,99
+exit
+end
+write memory

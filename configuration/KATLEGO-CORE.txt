@@ -1,0 +1,30 @@
+hostname KATLEGO-CORE
+vlan 10
+name DATA_CLASSROOMS_LIBRARY
+vlan 20
+name DATA_COMPUTER_LAB
+vlan 30
+name DATA_ADMIN
+vlan 40
+name VOICE
+vlan 99
+name MANAGEMENT
+interface vlan 99
+ip address 192.168.22.74 255.255.255.248
+no shutdown
+ip default-gateway 192.168.22.73
+interface fastEthernet0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,99
+interface fastEthernet0/2
+switchport mode trunk
+switchport trunk allowed vlan 20,99
+interface fastEthernet0/4
+switchport mode trunk
+switchport trunk allowed vlan 30,40,99
+interface gigabitEthernet0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30,40,99
+exit
+end
+write memory
